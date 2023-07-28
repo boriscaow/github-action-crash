@@ -19,17 +19,44 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        working-directory: ./04PracticeProject
+        run: npm ci
       - name: Test
         working-directory: ./04PracticeProject
         run: npm run test
   Build:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        working-directory: ./04PracticeProject
+        run: npm ci
       - name: Build
         working-directory: ./04PracticeProject
         run: npm run build
   Deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        working-directory: ./04PracticeProject
+        run: npm ci
       - name: Deploy
         run: echo "Deploying to k8s..."
