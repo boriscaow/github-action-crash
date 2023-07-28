@@ -1,5 +1,5 @@
 name: First Workflow
-on: workflow_dispatch
+on: Push
 jobs:
   first-job: 
     runs-on: ubuntu-latest
@@ -10,4 +10,17 @@ jobs:
           cat /etc/os-release
       - name: Print goodbye
         run: echo "Done - bye!"
-  
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: cd second-action-react-demo && npm ci
+        ## trigger
+      - name: Run test
+        run: cd second-action-react-demo && npm test
