@@ -29,7 +29,7 @@ jobs:
         run: cd second-action-react-demo && npm ci
       - name: Build project
         working-directory: ./second-action-react-demo
-        run: npm run huild
+        run: npm run build
       - name: Deploy
         run: echo "Deploying..."
 
