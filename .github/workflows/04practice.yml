@@ -18,7 +18,7 @@ jobs:
         run: npm run lint
       - name: Test
         working-directory: ./04PracticeProject
-        run: npm test
+        run: npm run test
       - name: Build
         working-directory: ./04PracticeProject
         run: npm run build
