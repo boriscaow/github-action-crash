@@ -5,10 +5,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - 'main'  # main
+      - main  # main
       - 'dev-*'  # dev-new
       - 'feat/**'  # feat/new feat/new/button
-    path-ignore:
+    paths-ignore:
       - '.github/workflows/*'
 jobs:
   deploy:
