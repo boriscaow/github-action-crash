@@ -1,3 +1,7 @@
+defaults:
+  run:
+    working-directory: 06EnvVar
+
 name: 06 Deployment
 on:
   push:
@@ -16,8 +20,6 @@ jobs:
         with:
           path: ~/.npm
           key: npm-deps-${{ hashFiles('**/package-lock.json') }}
-      - name: NPM install to fix npm errors
-        run: npm install
       - name: Install dependencies
         run: npm ci
       - name: Run server
