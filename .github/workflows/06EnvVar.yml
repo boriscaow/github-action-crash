@@ -8,8 +8,12 @@ on:
     branches:
       - main
       - dev
+env:
+  MONGODB_DB_NAME: gha-demo
+  PORT: 8080
 jobs:
   test:
+    env:
     environment: testing
     runs-on: ubuntu-latest
     steps:
@@ -23,9 +27,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run server
-        run: npm start & npx wait-on http://127.0.0.1:XYZ
+        run: echo "running server on port ${{ env.PORT }}..."
       - name: Run tests
-        run: npm test
+        run: echo "running test"
       - name: Output information
         run: echo "..."
   deploy:
@@ -34,4 +38,4 @@ jobs:
     steps:
       - name: Output information
         run: |        
-          echo "..."
+          echo "MONGODB_DB_NAME: ${{ env.MONGODB_DB_NAME }}"
