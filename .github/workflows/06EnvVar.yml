@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run server
-        run: echo "running server on port ${{ env.PORT }}..."
+        run: echo "running server on port ${{ env.PORT }} with password ${{ env.MONGODB_DB_PASSWORD }}..."
       - name: Run tests
         run: echo "running test"
       - name: Output information
