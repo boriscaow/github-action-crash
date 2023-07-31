@@ -28,7 +28,7 @@ jobs:
         working-directory: ./05Artifacts
         run: echo "ran build..."
       - name: Upload artifacts
-        uses: actions/upload-artifacts@v3
+        uses: actions/upload-artifact@v3
         with:
           name: dist-files
           path: |
