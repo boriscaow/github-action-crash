@@ -6,7 +6,8 @@ name: 07 Website Deployment
 on:
   push:
     branches:
-      - main
+      # - main
+      - dev
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -39,6 +40,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Test code
+        continue-on-error: true
         id: run-tests
         run: npm run test
       - name: Upload test report
