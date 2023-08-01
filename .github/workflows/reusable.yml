@@ -11,7 +11,6 @@ on:
       some-secrets:
         description: secrets demo
         required: false
-        type: string
     outputs:
       result:
         description: The result of the deployment operation
