@@ -6,7 +6,7 @@ name: 06 Deployment
 on:
   push:
     branches:
-      - main
+      # - main
       - dev
 env:
   MONGODB_DB_NAME: gha-demo
