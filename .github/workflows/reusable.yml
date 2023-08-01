@@ -13,6 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check input
-        run: echo "the input is: ${{ inputs.artifact-name }}"
+        run: echo "${{ inputs.artifact-name }}"
       - name: Output information
         run: echo "Deploying & uploading..."
